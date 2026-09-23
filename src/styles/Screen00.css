@@ -1,0 +1,500 @@
+/* SCREEN 00 STYLES */
+
+.screen-00-container {
+  min-height: calc(100vh - var(--header-height) - 44px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-4);
+  width: 100%;
+}
+
+/* ========================================================
+   CHAOTIC / BROKEN TYPOGRAPHY STYLES (INTENTIONAL ANTI-DESIGN)
+   ======================================================== */
+
+.chaos-stage, .is-chaos-mode .stabilized-stage {
+  border-color: transparent;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+/* Base chaos styles */
+.chaos-welcome, .chaos-headline, .chaos-gooddesign, .chaos-voice, .chaos-clickhere {
+  display: block;
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+/* Hide elements when in chaos mode */
+.chaos-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+/* Item 1: WELCOME!!! */
+.chaos-welcome {
+  position: absolute;
+  top: 6%;
+  left: 12%;
+  font-family: var(--font-comic) !important;
+  font-size: clamp(2.5rem, 4.5vw, 5.5rem) !important;
+  font-weight: 900 !important;
+  color: #FF0055 !important;
+  letter-spacing: -4px !important;
+  text-shadow: 4px 4px 0px #00FFFF, -3px -3px 0px #FFFF00 !important;
+  transform: rotate(-6deg);
+  z-index: 2;
+  text-transform: uppercase !important;
+}
+
+/* Item 2: TYPOGRAPHY */
+.chaos-typography {
+  position: absolute;
+  top: 22%;
+  left: 28%;
+  font-family: var(--font-papyrus) !important;
+  font-size: clamp(3rem, 7vw, 8rem) !important;
+  font-weight: 700 !important;
+  color: #00AA44 !important;
+  letter-spacing: 14px !important;
+  line-height: 0.7 !important;
+  transform: rotate(4deg) skewX(-8deg);
+  background-color: #FFFF00 !important;
+  padding: 4px 16px !important;
+  z-index: 4;
+}
+
+/* Item 3: IS REALLY REALLY */
+.chaos-really {
+  position: absolute;
+  top: 42%;
+  left: 8%;
+  font-family: var(--font-script) !important;
+  font-size: clamp(2rem, 3.5vw, 4.2rem) !important;
+  color: #0033FF !important;
+  line-height: 0.6 !important;
+  text-decoration: underline wavy #FF3B22 !important;
+  transform: rotate(-11deg);
+  z-index: 3;
+}
+
+/* Item 4: IMPORTANT!!!! */
+.chaos-important {
+  position: absolute;
+  top: 50%;
+  right: 14%;
+  font-family: var(--font-impact) !important;
+  font-size: clamp(3.2rem, 6.5vw, 7.5rem) !important;
+  color: #FF1493 !important;
+  letter-spacing: -2px !important;
+  line-height: 0.75 !important;
+  transform: rotate(7deg) scale(1.1);
+  border: 4px dashed #FFCC00 !important;
+  padding: 0 10px !important;
+  z-index: 5;
+}
+
+/* Item 5: GOOD DESIGN??? */
+.chaos-gooddesign {
+  position: absolute;
+  top: 72%;
+  left: 22%;
+  font-family: var(--font-serif) !important;
+  font-style: italic !important;
+  font-size: clamp(2rem, 3vw, 3.5rem) !important;
+  color: #7B1FA2 !important;
+  letter-spacing: 6px !important;
+  transform: rotate(-3deg);
+  z-index: 2;
+}
+
+/* Item 6: TYPE HAS A VOICE */
+.chaos-voice {
+  position: absolute;
+  top: 78%;
+  right: 25%;
+  font-family: Arial, sans-serif !important;
+  font-weight: 900 !important;
+  font-size: clamp(1.8rem, 2.8vw, 3.2rem) !important;
+  color: #E65100 !important;
+  text-transform: lowercase !important;
+  letter-spacing: -1px !important;
+  transform: rotate(5deg);
+  z-index: 3;
+}
+
+/* Item 7: CLICK HERE!!! */
+.chaos-clickhere {
+  position: absolute !important;
+  top: 34% !important;
+  right: 8% !important;
+  font-family: var(--font-comic) !important;
+  font-size: clamp(1.6rem, 2.2vw, 2.6rem) !important;
+  color: #FFFFFF !important;
+  background-color: #D50000 !important;
+  border: 3px solid #00E676 !important;
+  padding: 10px 18px !important;
+  transform: rotate(14deg) !important;
+  z-index: 6 !important;
+  box-shadow: 6px 6px 0px #000000 !important;
+  width: auto !important;
+}
+
+/* ========================================================
+   DIAGNOSIS ANNOTATION BADGES
+   ======================================================== */
+
+.violation-tag {
+  position: absolute;
+  background-color: var(--fg);
+  color: #FFFFFF;
+  border-left: 4px solid var(--accent);
+  padding: 6px 12px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  animation: badgePop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  z-index: 20;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.violation-num {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+@keyframes badgePop {
+  0% {
+    opacity: 0;
+    transform: scale(0.7) translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ========================================================
+   STABILIZED / RESTORED SWISS EDITORIAL GRID
+   ======================================================== */
+
+.stabilized-stage {
+  width: 100%;
+  max-width: 1180px;
+  border: var(--border-width-thick) solid var(--border);
+  background-color: var(--bg);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: var(--space-6);
+  gap: var(--space-6);
+  position: relative;
+  box-shadow: 12px 12px 0px var(--fg);
+  animation: snapIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes snapIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.stabilized-col-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: var(--border-width) solid var(--border);
+  padding-right: var(--space-5);
+}
+
+.stabilized-col-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: var(--space-2);
+}
+
+.stabilized-welcome {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: var(--space-2);
+}
+
+.stabilized-headline {
+  font-family: var(--font-sans);
+  font-size: clamp(2.6rem, 4.2vw, 4.4rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--fg);
+  margin-bottom: var(--space-4);
+}
+
+.stabilized-subline {
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--muted);
+  max-width: 480px;
+  margin-bottom: var(--space-5);
+}
+
+.stabilized-principles {
+  border-top: var(--border-width) solid var(--border);
+  padding-top: var(--space-4);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+.stabilized-principle-item {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  line-height: 1.3;
+}
+
+.stabilized-principle-item strong {
+  display: block;
+  color: var(--fg);
+  font-weight: 700;
+}
+
+.stabilized-principle-item span {
+  color: var(--muted);
+}
+
+/* ========================================================
+   ALERT HUD DIALOG
+   ======================================================== */
+
+.failure-hud {
+  position: absolute;
+  bottom: 30px;
+  background-color: var(--fg);
+  color: var(--bg);
+  border: var(--border-width-thick) solid var(--accent);
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 620px;
+  width: 90%;
+  box-shadow: 8px 8px 0px var(--accent);
+  animation: hudAppear 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  z-index: 40;
+}
+
+@keyframes hudAppear {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.failure-hud-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(242, 240, 233, 0.2);
+  padding-bottom: var(--space-2);
+}
+
+.hud-title {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+  color: #FFFFFF;
+}
+
+.hud-counter {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.hud-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+/* Status banner for stabilized system */
+.stabilized-status-banner {
+  background-color: var(--fg);
+  color: var(--bg);
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  margin-top: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+@media (max-width: 900px) {
+  .stabilized-stage {
+    grid-template-columns: 1fr;
+  }
+  .stabilized-col-left {
+    border-right: none;
+    border-bottom: var(--border-width) solid var(--border);
+    padding-bottom: var(--space-5);
+  }
+}
+
+/* ========================================================
+   SCREEN 00 V2 — MANUAL DIAGNOSTIC + EXACT FAILURE MAPPING
+   ======================================================== */
+.hud-copy {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #DDDDDD;
+  max-width: 54ch;
+}
+
+/* During diagnosis, the HUD moves to the lower-right so it does not hide the mapped composition. */
+.failure-hud.hud-diagnose {
+  left: auto;
+  right: 22px;
+  bottom: 20px;
+  width: min(440px, 42vw);
+  padding: var(--space-3) var(--space-4);
+}
+
+.diagnostic-map {
+  position: absolute;
+  inset: 0;
+  z-index: 32;
+  pointer-events: none;
+}
+
+.mapped-violation {
+  position: absolute;
+  font-family: var(--font-mono);
+  color: #fff;
+  --line-w: 90px;
+  --line-angle: 0deg;
+}
+
+.mapped-label {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 7px;
+  row-gap: 1px;
+  min-width: 190px;
+  padding: 7px 9px;
+  background: #111;
+  border-left: 4px solid var(--accent);
+  box-shadow: 4px 4px 0 rgba(255,59,34,.28);
+  font-size: clamp(.58rem, .7vw, .72rem);
+  font-weight: 700;
+  letter-spacing: .05em;
+  line-height: 1.1;
+}
+.mapped-label b { color: var(--accent); }
+.mapped-label small {
+  grid-column: 2;
+  color: #aaa;
+  font-size: .58rem;
+  letter-spacing: .08em;
+  margin-top: 2px;
+}
+
+.mapped-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--accent);
+  background: #F2F0E9;
+  border-radius: 50%;
+  transform: translate(-50%,-50%);
+  animation: mapPulse 1.4s ease-in-out infinite;
+}
+.mapped-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--line-w);
+  height: 1px;
+  background: var(--accent);
+  transform-origin: 0 50%;
+  transform: rotate(var(--line-angle));
+  animation: mapLine .42s cubic-bezier(.16,1,.3,1) both;
+}
+@keyframes mapLine { from { scale: 0 1; } to { scale: 1 1; } }
+@keyframes mapPulse { 50% { box-shadow: 0 0 0 7px rgba(255,59,34,.13); } }
+
+/* Exact mappings to the intentionally broken elements at desktop/projector sizes. */
+.map-welcome { top: 10%; left: 5%; --line-w: 95px; --line-angle: 18deg; }
+.map-welcome .mapped-dot { left: 95px; top: 31px; }
+.map-welcome .mapped-label { transform: translateY(42px); }
+
+.map-typography { top: 18%; left: 55%; --line-w: 120px; --line-angle: 162deg; }
+.map-typography .mapped-dot { left: 0; top: 12px; }
+.map-typography .mapped-label { transform: translate(18px,-8px); }
+.map-typography .mapped-line { left: 0; top: 12px; }
+
+.map-rhythm { top: 45%; left: 3%; --line-w: 125px; --line-angle: -12deg; }
+.map-rhythm .mapped-dot { left: 125px; top: -26px; }
+.map-rhythm .mapped-label { transform: translateY(8px); }
+.map-rhythm .mapped-line { top: 8px; }
+
+.map-hierarchy { top: 50%; right: 2%; --line-w: 115px; --line-angle: 194deg; }
+.map-hierarchy .mapped-dot { left: -108px; top: -25px; }
+.map-hierarchy .mapped-label { transform: translateY(10px); }
+.map-hierarchy .mapped-line { left: 0; top: 10px; }
+
+.map-alignment { top: 31%; right: 3%; --line-w: 95px; --line-angle: 190deg; }
+.map-alignment .mapped-dot { left: -91px; top: -17px; }
+.map-alignment .mapped-label { transform: translateY(-34px); }
+.map-alignment .mapped-line { left: 0; top: 0; }
+
+/* Make diagnosed source elements visibly correspond to their callouts. */
+.is-chaos-mode:has(.diagnostic-map) .chaos-target-welcome,
+.is-chaos-mode:has(.diagnostic-map) .chaos-target-typography,
+.is-chaos-mode:has(.diagnostic-map) .chaos-target-rhythm,
+.is-chaos-mode:has(.diagnostic-map) .chaos-target-hierarchy,
+.is-chaos-mode:has(.diagnostic-map) .chaos-target-alignment {
+  outline: 2px solid rgba(255,59,34,.85);
+  outline-offset: 5px;
+}
+
+@media (max-width: 900px) {
+  .failure-hud.hud-diagnose {
+    right: 5%;
+    width: 90%;
+  }
+  .diagnostic-map { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mapped-dot, .mapped-line { animation: none !important; }
+}

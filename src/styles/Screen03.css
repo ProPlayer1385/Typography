@@ -1,0 +1,319 @@
+/* SCREEN 03 — SPACING LAB & TYPOGRAPHY AROUND YOU */
+
+.screen-03-container {
+  min-height: calc(100vh - var(--header-height) - 44px);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-4) 0;
+  width: 100%;
+}
+
+.spacing-header {
+  border-bottom: var(--border-width-thick) solid var(--border);
+  padding-bottom: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.spacing-title-number {
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.spacing-title-text {
+  font-family: var(--font-sans);
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--fg);
+}
+
+/* -------------------------------------------------------------
+   LAB SECTION 1: KERNING & TRACKING
+   ------------------------------------------------------------- */
+
+.lab-section {
+  border: var(--border-width-thick) solid var(--border);
+  background-color: var(--surface);
+  box-shadow: 8px 8px 0px var(--fg);
+  padding: var(--space-5);
+  margin-bottom: var(--space-6);
+}
+
+.lab-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: var(--border-width) solid var(--border-light);
+  padding-bottom: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+/* Kerning Specimen Display */
+.kerning-display-box {
+  background-color: var(--bg);
+  border: var(--border-width) solid var(--border);
+  padding: var(--space-6) var(--space-4);
+  text-align: center;
+  margin-bottom: var(--space-4);
+  overflow-x: auto;
+}
+
+.kerning-word {
+  font-family: var(--font-impact);
+  font-size: clamp(4rem, 9.5vw, 11rem);
+  letter-spacing: 0;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+
+.kerning-char {
+  display: inline-block;
+  transition: margin 0.1s ease;
+}
+
+.kerning-pair-target {
+  position: relative;
+  background-color: rgba(255, 59, 34, 0.12);
+  outline: 1px dashed var(--accent);
+}
+
+/* Pair Selection Controls */
+.pair-selector-row {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-4);
+}
+
+.pair-btn {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 8px 16px;
+  border: var(--border-width) solid var(--border);
+  background-color: var(--bg);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.pair-btn.active {
+  background-color: var(--fg);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+
+/* Slider Controls */
+.slider-control-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.slider-labels-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.swiss-range-slider {
+  width: 100%;
+  height: 8px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  outline: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.swiss-range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  background: var(--fg);
+  border: 2px solid var(--accent);
+  cursor: pointer;
+  border-radius: 0;
+}
+
+.swiss-range-slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  background: var(--fg);
+  border: 2px solid var(--accent);
+  cursor: pointer;
+  border-radius: 0;
+}
+
+/* -------------------------------------------------------------
+   LAB SECTION 2: LEADING
+   ------------------------------------------------------------- */
+
+.leading-display-box {
+  background-color: var(--bg);
+  border: var(--border-width) solid var(--border);
+  padding: var(--space-5);
+  margin-bottom: var(--space-4);
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.leading-specimen-text {
+  font-family: var(--font-sans);
+  font-size: clamp(1.8rem, 3.2vw, 3.2rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--fg);
+  letter-spacing: -0.02em;
+  transition: line-height 0.15s ease;
+}
+
+.rhythm-badge {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--bg);
+  background-color: var(--fg);
+  border-left: 4px solid var(--accent);
+  padding: 8px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: var(--space-3);
+  animation: badgePop 0.25s ease forwards;
+}
+
+/* -------------------------------------------------------------
+   PART 2: TYPOGRAPHY AROUND YOU (CHRONOLOGICAL TIMELINE)
+   ------------------------------------------------------------- */
+
+.around-you-section {
+  border-top: var(--border-width-thick) solid var(--border);
+  padding-top: var(--space-6);
+  margin-top: var(--space-4);
+}
+
+.timeline-list {
+  display: flex;
+  flex-direction: column;
+  border: var(--border-width-thick) solid var(--border);
+  background-color: var(--bg);
+  margin: var(--space-5) 0;
+}
+
+.timeline-item {
+  border-bottom: var(--border-width) solid var(--border-light);
+  transition: background-color 0.15s ease;
+}
+
+.timeline-item:last-child {
+  border-bottom: none;
+}
+
+.timeline-header-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.timeline-header-btn:hover {
+  background-color: var(--surface);
+}
+
+.timeline-header-btn.expanded {
+  background-color: var(--fg);
+  color: var(--bg);
+}
+
+.timeline-header-btn.expanded .timeline-time {
+  color: var(--accent) !important;
+}
+
+.timeline-time {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-right: var(--space-3);
+}
+
+.timeline-title {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.timeline-content-panel {
+  padding: var(--space-4);
+  background-color: var(--surface);
+  border-top: var(--border-width) solid var(--border-light);
+}
+
+.job-pill-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.job-pill {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  background-color: var(--fg);
+  color: var(--bg);
+  padding: 4px 10px;
+  letter-spacing: 0.06em;
+}
+
+/* Final Epilogue Banner */
+.around-you-epilogue {
+  background-color: var(--fg);
+  color: var(--bg);
+  border: var(--border-width-thick) solid var(--accent);
+  box-shadow: 10px 10px 0px var(--accent);
+  padding: var(--space-6);
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-6);
+}
+
+.epilogue-title {
+  font-family: var(--font-sans);
+  font-size: clamp(2rem, 3.8vw, 3.8rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-bottom: var(--space-4);
+}
+
+.epilogue-sub {
+  font-family: var(--font-sans);
+  font-size: clamp(1.1rem, 1.8vw, 1.7rem);
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}

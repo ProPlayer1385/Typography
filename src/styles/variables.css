@@ -1,0 +1,68 @@
+:root {
+  /* Color Palette - Swiss Editorial */
+  --bg: #F2F0E9;
+  --fg: #111111;
+  --accent: #FF3B22;
+  --muted: #76746E;
+  --border: #111111;
+  --border-light: rgba(17, 17, 17, 0.15);
+  --grid-line: rgba(17, 17, 17, 0.1);
+  --surface: #E8E5DC;
+  --surface-clean: #FFFFFF;
+
+  /* Typography Stack with Bulletproof Offline/Local Fallbacks */
+  --font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'Space Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, 'Courier New', monospace;
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-display: 'Syne', -apple-system, BlinkMacSystemFont, 'Arial Black', Impact, sans-serif;
+  --font-impact: 'Impact', 'Arial Black', sans-serif;
+
+  /* Deliberate Failure Typefaces for Screen 00 */
+  --font-comic: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive, sans-serif;
+  --font-papyrus: 'Papyrus', 'Copperplate', fantasy, serif;
+  --font-script: 'Brush Script MT', 'Lucida Handwriting', cursive;
+
+  /* Responsive Fluid Type Scales */
+  --text-xs: clamp(0.7rem, 0.65rem + 0.25vw, 0.85rem);
+  --text-sm: clamp(0.85rem, 0.8rem + 0.3vw, 1rem);
+  --text-base: clamp(1rem, 0.95rem + 0.4vw, 1.2rem);
+  --text-lg: clamp(1.25rem, 1.15rem + 0.6vw, 1.6rem);
+  --text-xl: clamp(1.6rem, 1.4rem + 1vw, 2.2rem);
+  --text-2xl: clamp(2.2rem, 1.8rem + 2vw, 3.4rem);
+  --text-3xl: clamp(3rem, 2.4rem + 3.2vw, 5rem);
+  --text-hero: clamp(3.8rem, 2.8rem + 6vw, 8.5rem);
+
+  /* Spacing System */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+  --space-8: 96px;
+
+  /* Structural Geometry */
+  --border-width: 1px;
+  --border-width-thick: 2px;
+  --header-height: 60px;
+
+  /* Motion System (Kinetic Typography & Interactions) */
+  --transition-fast: 150ms;
+  --transition-normal: 250ms;
+  --transition-slow: 450ms;
+  --transition-major: 800ms;
+  --transition-cinematic: 1200ms;
+  --ease-physical: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-snappy: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-cinematic: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

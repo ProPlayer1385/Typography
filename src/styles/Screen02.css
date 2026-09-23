@@ -1,0 +1,559 @@
+/* SCREEN 02 — ANATOMY LAB */
+
+.screen-02-container {
+  min-height: calc(100vh - var(--header-height) - 44px);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-4) 0;
+  width: 100%;
+}
+
+.anatomy-header {
+  border-bottom: var(--border-width-thick) solid var(--border);
+  padding-bottom: var(--space-4);
+  margin-bottom: var(--space-5);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.anatomy-title-number {
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.anatomy-title-text {
+  font-family: var(--font-sans);
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--fg);
+}
+
+.anatomy-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--space-5);
+  margin-bottom: var(--space-6);
+}
+
+@media (max-width: 960px) {
+  .anatomy-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Specimen Stage */
+.specimen-stage {
+  position: relative;
+  background-color: var(--surface);
+  border: var(--border-width-thick) solid var(--border);
+  box-shadow: 8px 8px 0px var(--fg);
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: var(--space-4);
+}
+
+.specimen-canvas {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.specimen-glyph-text {
+  font-family: var(--font-serif);
+  font-size: clamp(14rem, 24vw, 24rem);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--fg);
+  user-select: none;
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+
+/* SVG Overlay for anatomy guides */
+.anatomy-svg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Editorial Index beside specimen */
+.anatomy-sidebar {
+  display: flex;
+  flex-direction: column;
+  border: var(--border-width-thick) solid var(--border);
+  background-color: var(--bg);
+}
+
+.anatomy-sidebar-header {
+  background-color: var(--fg);
+  color: var(--bg);
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.terms-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.term-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: var(--border-width) solid var(--border-light);
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.term-btn:hover {
+  background-color: var(--surface);
+}
+
+.term-btn.active {
+  background-color: var(--fg);
+  color: var(--bg);
+}
+
+.term-btn.active .mono-label {
+  color: var(--accent) !important;
+}
+
+.term-name {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+/* Definition card */
+.definition-box {
+  padding: var(--space-4);
+  background-color: var(--fg);
+  color: var(--bg);
+  border-top: var(--border-width-thick) solid var(--border);
+}
+
+.definition-term {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.definition-text {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: #E2DFD6;
+}
+
+/* Sentence Stage */
+.sentence-canvas {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.sentence-text {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 5vw, 5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--fg);
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.sentence-line {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: 0 var(--space-2);
+}
+
+.hl-kerning {
+  letter-spacing: -0.05em;
+  color: var(--accent);
+  display: inline-block;
+}
+
+/* Animations for Ligature, Kerning, Leading */
+.ligature-text .ligature-i {
+  display: inline-block;
+  transform: translateX(0);
+  animation: ligatureJoin var(--transition-cinematic) var(--ease-physical) forwards alternate infinite;
+}
+@keyframes ligatureJoin {
+  0% { transform: translateX(20px); }
+  100% { transform: translateX(-15px); }
+}
+
+.kerning-text .kerning-v {
+  display: inline-block;
+  transform: translateX(0);
+  animation: kerningAdjust var(--transition-cinematic) var(--ease-physical) forwards alternate infinite;
+}
+@keyframes kerningAdjust {
+  0% { transform: translateX(30px); }
+  100% { transform: translateX(-5px); }
+}
+
+.leading-text {
+  display: inline-block;
+  line-height: 1;
+  animation: leadingAdjust var(--transition-cinematic) var(--ease-physical) forwards alternate infinite;
+}
+@keyframes leadingAdjust {
+  0% { line-height: 1.5; }
+  100% { line-height: 0.7; }
+}
+
+/* Terms List Layout */
+.terms-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
+  max-height: 500px;
+}
+
+/* ========================================================
+   ANATOMY BACKGROUND FRACTAL GLYPHS (2–3% opacity)
+   ======================================================== */
+.anatomy-bg-fractal {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.anatomy-bg-glyph {
+  position: absolute;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  color: #111111;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.anatomy-bg-glyph-0 { top: 5%;  left: 5%;  font-size: 14vw; opacity: 0.025; transform: rotate(-8deg); }
+.anatomy-bg-glyph-1 { top: 45%; right: 3%; font-size: 18vw; opacity: 0.018; transform: rotate(5deg);  }
+.anatomy-bg-glyph-2 { bottom: 5%; left: 30%; font-size: 8vw; opacity: 0.03;  transform: rotate(3deg);  }
+.anatomy-bg-glyph-3 { top: 10%; right: 20%; font-size: 6vw; opacity: 0.022; transform: rotate(-4deg); }
+.anatomy-bg-glyph-4 { bottom: 15%; left: 5%; font-size: 22vw; opacity: 0.015; transform: rotate(-2deg); }
+.anatomy-bg-glyph-5 { top: 30%; left: 45%; font-size: 10vw; opacity: 0.02;  transform: rotate(10deg); }
+
+/* Ensure specimen canvas stays above fractal */
+.specimen-canvas,
+.sentence-canvas {
+  position: relative;
+  z-index: 1;
+}
+
+/* ========================================================
+   SAME SENTENCE. DIFFERENT TYPE. SECTION
+   ======================================================== */
+.sentence-typeface-section {
+  margin-top: var(--space-7);
+  border-top: var(--border-width-thick) solid var(--border);
+  padding-top: var(--space-6);
+}
+
+.sentence-tf-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.sentence-tf-title {
+  font-family: var(--font-sans);
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--fg);
+  margin-top: var(--space-2);
+}
+
+.sentence-tf-note {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  max-width: 360px;
+  text-align: right;
+}
+
+/* Typeface selector buttons */
+.sentence-tf-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.tf-select-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: 10px 16px;
+  border: var(--border-width) solid var(--border);
+  background-color: var(--bg);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  min-width: 140px;
+}
+
+.tf-select-btn:hover {
+  background-color: var(--fg);
+  color: var(--bg);
+  transform: translate(-2px, -2px);
+  box-shadow: 3px 3px 0px var(--accent);
+}
+
+.tf-select-btn.tf-active {
+  background-color: var(--fg);
+  color: var(--bg);
+  border-color: var(--accent);
+  box-shadow: 4px 4px 0px var(--accent);
+}
+
+.tf-btn-category {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+
+.tf-btn-label {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Sentence specimen display */
+.sentence-specimen-stage {
+  border: var(--border-width-thick) solid var(--border);
+  background-color: var(--surface);
+  padding: var(--space-6) var(--space-5);
+  margin-bottom: var(--space-5);
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  box-shadow: 8px 8px 0px var(--fg);
+}
+
+.sentence-specimen-text {
+  font-size: clamp(1.4rem, 2.8vw, 2.8rem);
+  line-height: 1.3;
+  color: var(--fg);
+  width: 100%;
+}
+
+.sentence-tf-enter {
+  animation: sentenceEnter 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes sentenceEnter {
+  from { opacity: 0; transform: translateY(12px) scaleY(0.95); }
+  to   { opacity: 1; transform: translateY(0) scaleY(1); }
+}
+
+.sentence-tf-exit {
+  animation: sentenceExit 0.35s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+@keyframes sentenceExit {
+  from { opacity: 1; transform: translateY(0) scaleY(1); }
+  to   { opacity: 0; transform: translateY(-8px) scaleY(0.96); }
+}
+
+/* Typeface info panel */
+.tf-info-panel {
+  background-color: var(--fg);
+  color: var(--bg);
+  padding: var(--space-4) var(--space-5);
+  border-left: 4px solid var(--accent);
+  margin-bottom: var(--space-5);
+  animation: tfInfoReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes tfInfoReveal {
+  from { opacity: 0; transform: translateX(-12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.tf-info-name {
+  font-family: var(--font-sans);
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-bottom: var(--space-3);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: var(--space-2);
+}
+
+.tf-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+@media (max-width: 640px) {
+  .tf-info-grid { grid-template-columns: 1fr; }
+}
+
+.tf-info-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tf-info-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.tf-info-value {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #EEEEEE;
+  letter-spacing: 0.04em;
+}
+
+/* Conclusion statement */
+.sentence-tf-conclusion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-top: var(--space-4);
+}
+
+.sentence-tf-coda {
+  font-family: var(--font-sans);
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  line-height: 0.95;
+  color: var(--fg);
+  display: block;
+}
+
+
+/* ========================================================
+   V2 — REAL SENTENCE ANATOMY SCANNER
+   ======================================================== */
+.sentence-anatomy {
+  min-height: 480px;
+  flex-direction: column;
+  padding: clamp(28px, 4vw, 58px);
+  overflow: hidden;
+  isolation: isolate;
+}
+.sentence-anatomy-kicker {
+  position: absolute; top: 18px; left: 20px;
+  font: 700 .68rem/1 var(--font-mono);
+  letter-spacing: .12em; color: var(--accent); z-index: 6;
+}
+.sentence-anatomy .sentence-text {
+  width: 100%;
+  font-size: clamp(2.25rem, 5.1vw, 5.2rem);
+  font-weight: 800;
+  letter-spacing: -.045em;
+  transition: line-height .35s var(--ease-physical), font-family .35s ease;
+}
+.sentence-anatomy .sentence-line { padding: 0; }
+.sentence-lower { text-transform: none; }
+.sentence-anatomy-caption {
+  position: absolute; left: 20px; right: 20px; bottom: 16px;
+  display: flex; justify-content: space-between; gap: 24px; align-items: baseline;
+  border-top: 1px solid rgba(17,17,17,.25); padding-top: 10px;
+  font-family: var(--font-mono); z-index: 7;
+}
+.sentence-anatomy-caption strong { color: var(--accent); font-size: .72rem; letter-spacing: .1em; }
+.sentence-anatomy-caption span { max-width: 66%; font-size: .72rem; color: var(--muted); text-align: right; }
+.sentence-baselines { position:absolute; inset:0; pointer-events:none; z-index:4; }
+.sentence-baselines i { position:absolute; left:8%; right:8%; height:2px; background:var(--accent); transform-origin:left; animation:drawSentenceGuide .55s var(--ease-physical) both; }
+.sentence-baselines i:nth-child(1){top:39%}.sentence-baselines i:nth-child(2){top:54%}.sentence-baselines i:nth-child(3){top:69%}
+@keyframes drawSentenceGuide { from{transform:scaleX(0)} to{transform:scaleX(1)} }
+.sentence-xheight-band { position:absolute; left:7%; right:7%; top:36%; height:13%; border-top:2px solid var(--accent); border-bottom:2px solid var(--accent); background:rgba(255,59,34,.08); z-index:3; animation:tfInfoReveal .45s ease both; }
+.sentence-xheight-band span { position:absolute; right:0; top:-20px; font:700 .65rem var(--font-mono); color:var(--accent); letter-spacing:.1em; }
+.sentence-callout { position:absolute; z-index:7; border:2px solid var(--accent); background:var(--bg); padding:9px 12px; font:900 .78rem var(--font-mono); letter-spacing:.08em; animation:tfInfoReveal .45s ease both; }
+.sentence-callout span { display:block; margin-top:4px; font-weight:500; color:var(--muted); letter-spacing:.02em; }
+.sentence-callout-top{top:18%;right:8%}.sentence-callout-left{left:5%;top:44%}.sentence-callout-right{right:5%;top:48%}
+.sentence-absence-card { position:absolute; z-index:8; right:5%; bottom:20%; max-width:390px; background:var(--fg); color:var(--bg); border-left:5px solid var(--accent); padding:16px 18px; font-family:var(--font-mono); animation:tfInfoReveal .45s ease both; }
+.sentence-absence-card strong { display:block; color:var(--accent); font-size:.78rem; letter-spacing:.07em; margin-bottom:10px; }
+.sentence-absence-card span { font-size:1rem; }
+.descender-mark { color:var(--accent); font-size:1.35em; position:relative; top:.12em; }
+.sentence-ligature-demo { font-family:var(--font-serif); font-size:1.5rem!important; }
+.sentence-ligature-demo b { color:var(--accent); padding:0 8px; }
+.sentence-counter-demo { position:absolute; z-index:7; right:7%; top:19%; display:flex; gap:10px; align-items:center; background:var(--bg); border:2px solid var(--accent); padding:10px 14px; }
+.sentence-counter-demo span { font:900 2.3rem var(--font-sans); color:var(--accent); -webkit-text-stroke:1px var(--fg); }
+.sentence-counter-demo small { font:700 .62rem var(--font-mono); letter-spacing:.08em; max-width:95px; }
+.sentence-kerning-demo { position:absolute; z-index:7; right:8%; top:20%; background:var(--fg); color:var(--bg); padding:10px 14px 8px; font:900 2.5rem var(--font-sans); }
+.sentence-kerning-demo .kern-a { display:inline-block; animation:sentenceKern 1.7s var(--ease-physical) infinite alternate; color:var(--accent); }
+.sentence-kerning-demo small { display:block; font:700 .6rem var(--font-mono); letter-spacing:.1em; margin-top:4px; }
+@keyframes sentenceKern { from{transform:translateX(18px)} to{transform:translateX(-3px)} }
+.sentence-leading-control { position:absolute; z-index:8; left:7%; right:7%; bottom:18%; background:var(--bg); border:2px solid var(--fg); padding:10px 14px; box-shadow:4px 4px 0 var(--accent); }
+.sentence-leading-control label,.sentence-leading-control>div { display:flex; justify-content:space-between; font:700 .65rem var(--font-mono); letter-spacing:.08em; }
+.sentence-leading-control input { width:100%; accent-color:var(--accent); margin:8px 0 4px; }
+
+@media (max-width: 760px) {
+  .sentence-anatomy-caption { position:relative; left:auto; right:auto; bottom:auto; margin-top:28px; flex-direction:column; gap:5px; }
+  .sentence-anatomy-caption span { max-width:100%; text-align:left; }
+  .sentence-absence-card,.sentence-callout,.sentence-counter-demo,.sentence-kerning-demo { transform:scale(.82); transform-origin:top right; }
+  .sentence-leading-control { bottom:12%; }
+}

@@ -1,0 +1,207 @@
+@import './variables.css';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.4;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: #FFFFFF;
+}
+
+a, button {
+  font-family: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  text-decoration: none;
+}
+
+button:focus-visible, a:focus-visible, [tabindex]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Swiss Grid Base Layer */
+.grid-bg {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+}
+
+/* Technical Monospace Micro-labels */
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+}
+
+.mono-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  padding: 2px 6px;
+  border: 1px solid var(--border);
+  display: inline-block;
+  text-transform: uppercase;
+  background: var(--bg);
+}
+
+/* Primary Action Buttons */
+.btn-swiss {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background-color: var(--fg);
+  color: var(--bg);
+  border: var(--border-width-thick) solid var(--fg);
+  padding: 14px 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.15s ease-in-out;
+  border-radius: 0;
+}
+
+.btn-swiss:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #FFFFFF;
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0px var(--fg);
+}
+
+.btn-swiss:active {
+  transform: translate(0, 0);
+  box-shadow: 0 0 0 transparent;
+}
+
+.btn-swiss-secondary {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: var(--fg);
+  border: var(--border-width) solid var(--fg);
+  padding: 12px 24px;
+  border-radius: 0;
+  transition: all 0.15s ease-in-out;
+}
+
+.btn-swiss-secondary:hover {
+  background-color: var(--fg);
+  color: var(--bg);
+}
+
+.btn-swiss-accent {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #FFFFFF;
+}
+
+.btn-swiss-accent:hover {
+  background-color: var(--fg);
+  border-color: var(--fg);
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   KINETIC TYPOGRAPHY & MOTION SYSTEM (V2)
+   ========================================================================== */
+
+/* Mask Reveals */
+.mask-container {
+  overflow: hidden;
+}
+.mask-reveal-up {
+  transform: translateY(100%);
+  animation: revealUp var(--transition-major) var(--ease-physical) forwards;
+}
+@keyframes revealUp {
+  to { transform: translateY(0); }
+}
+
+/* Stagger Utilities */
+.stagger-1 { animation-delay: 100ms; }
+.stagger-2 { animation-delay: 200ms; }
+.stagger-3 { animation-delay: 300ms; }
+.stagger-4 { animation-delay: 400ms; }
+.stagger-5 { animation-delay: 500ms; }
+.stagger-6 { animation-delay: 600ms; }
+
+/* Cinematic Fade */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn var(--transition-major) var(--ease-physical) forwards;
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Experiment Entrance Container */
+.exp-enter {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: expEnter var(--transition-major) var(--ease-physical) forwards;
+}
+@keyframes expEnter {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Physical Interaction Helpers */
+.hover-physical {
+  transition: transform var(--transition-normal) var(--ease-physical);
+}
+.hover-physical:hover {
+  transform: translateX(6px);
+}
+.hover-arrow {
+  display: inline-block;
+  transition: transform var(--transition-fast) var(--ease-physical);
+}
+.hover-arrow-parent:hover .hover-arrow {
+  transform: translateX(4px);
+}
+
+.anim-enter-left {
+  animation: enterLeft var(--transition-major) var(--ease-physical) forwards;
+}
+@keyframes enterLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.anim-enter-right {
+  animation: enterRight var(--transition-major) var(--ease-physical) forwards;
+}
+@keyframes enterRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}

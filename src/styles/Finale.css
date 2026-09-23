@@ -1,0 +1,164 @@
+/* ===================================================
+   FINALE — CINEMATIC TYPOGRAPHIC SEQUENCE
+   =================================================== */
+
+.finale-container {
+  min-height: calc(100vh - var(--header-height) - 44px);
+  background-color: var(--fg);
+  color: var(--bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-6) var(--space-4);
+  text-align: center;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fractal layer wraps the TypoFractal component positioned absolutely */
+.finale-fractal-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.finale-sequence-wrap {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 960px;
+  min-height: 480px;
+  width: 100%;
+}
+
+/* ===================================================
+   ENTRANCE ANIMATION
+   =================================================== */
+.finale-anim-in {
+  animation: finaleIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes finaleIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===================================================
+   STEP 1: TEASER
+   =================================================== */
+.finale-step-lead {
+  font-family: var(--font-mono);
+  font-size: clamp(0.85rem, 1.4vw, 1.2rem);
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+/* ===================================================
+   STEPS 2 & 3: TEXT BLOCKS
+   =================================================== */
+.finale-step-block {
+  width: 100%;
+}
+
+.finale-step-text {
+  font-family: var(--font-sans);
+  font-size: clamp(2.6rem, 6vw, 6rem);
+  font-weight: 900;
+  line-height: 1.0;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+/* TYPOGRAPHY word — larger, cinematic weight */
+.finale-type-word {
+  display: block;
+  font-size: clamp(3rem, 8vw, 8.5rem);
+  color: var(--accent);
+  letter-spacing: -0.06em;
+  line-height: 0.9;
+  margin: 0.05em 0;
+}
+
+/* ===================================================
+   STEP 4: FINAL CLEAN COMPOSITION
+   =================================================== */
+.finale-composition {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 700px;
+}
+
+/* The large Aa monogram */
+.finale-aa-mark {
+  font-family: var(--font-serif);
+  font-size: clamp(7rem, 16vw, 14rem);
+  font-weight: 700;
+  line-height: 0.85;
+  color: var(--accent);
+  user-select: none;
+  letter-spacing: -0.04em;
+  margin-bottom: var(--space-3);
+}
+
+.finale-brand {
+  font-family: var(--font-sans);
+  font-size: clamp(2.5rem, 5.5vw, 5rem);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  color: #FFFFFF;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+}
+
+.finale-divider {
+  width: 80px;
+  height: 2px;
+  background-color: var(--accent);
+  margin-bottom: var(--space-4);
+}
+
+.finale-essence {
+  font-family: var(--font-mono);
+  font-size: clamp(0.75rem, 1.1vw, 1rem);
+  letter-spacing: 0.18em;
+  color: #CCCCCC;
+  text-transform: uppercase;
+  margin-bottom: var(--space-2);
+}
+
+.finale-course-credit {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: var(--space-6);
+}
+
+.finale-actions {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .finale-anim-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .finale-fractal-wrap {
+    display: none;
+  }
+}

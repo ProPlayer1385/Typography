@@ -1,0 +1,206 @@
+/* SCREEN 06 — FONT PSYCHOLOGY */
+
+.screen-06-container {
+  min-height: calc(100vh - var(--header-height) - 44px);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-4) 0;
+  width: 100%;
+}
+
+/* Interactive Display Box */
+.psychology-stage {
+  border: var(--border-width-thick) solid var(--border);
+  background-color: var(--surface);
+  box-shadow: 8px 8px 0px var(--fg);
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.warning-message-box {
+  width: 100%;
+  max-width: 960px;
+  background-color: var(--bg);
+  border: var(--border-width-thick) solid var(--border);
+  padding: var(--space-7) var(--space-4);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+}
+
+.warning-text {
+  font-size: clamp(3.2rem, 7.5vw, 7.5rem);
+  line-height: 1;
+  user-select: none;
+  color: var(--fg);
+  transition: all 0.2s ease;
+}
+
+.warning-helvetica {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.warning-times {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.warning-comicsans {
+  font-family: var(--font-comic);
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+/* Perceived Voice Badge */
+.perceived-voice-badge {
+  background-color: var(--fg);
+  color: var(--bg);
+  border-left: 4px solid var(--accent);
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.voice-descriptor {
+  font-family: var(--font-mono);
+  font-size: clamp(0.85rem, 1.2vw, 1.15rem);
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+}
+
+/* Three Case Studies Grid */
+.case-study-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+@media (max-width: 900px) {
+  .case-study-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.case-card {
+  border: var(--border-width) solid var(--border);
+  background-color: var(--bg);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.case-card.active-case {
+  border: var(--border-width-thick) solid var(--accent);
+  box-shadow: 6px 6px 0px var(--fg);
+  background-color: var(--surface);
+}
+
+.case-title {
+  font-family: var(--font-sans);
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-2);
+}
+
+.case-meta-item {
+  border-top: 1px solid var(--border-light);
+  padding-top: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.case-meta-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--accent);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.case-meta-text {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  line-height: 1.35;
+  color: var(--fg);
+}
+
+/* Conclusion Banner */
+.psychology-conclusion {
+  background-color: var(--fg);
+  color: var(--bg);
+  border: var(--border-width-thick) solid var(--accent);
+  box-shadow: 12px 12px 0px var(--accent);
+  padding: var(--space-6);
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-6);
+}
+
+.psychology-conclusion-headline {
+  font-family: var(--font-sans);
+  font-size: clamp(2rem, 3.8vw, 3.8rem);
+  font-weight: 900;
+  line-height: 1.05;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.psychology-conclusion-headline .voice-subline {
+  color: var(--accent);
+  display: block;
+}
+
+/* ========================================================
+   KINETIC TYPOGRAPHY ANIMATIONS FOR EXP.06
+   ======================================================== */
+.anim-helvetica {
+  animation: snapImpact 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes snapImpact {
+  0% { transform: scale(0.95); opacity: 0.5; filter: blur(2px); }
+  100% { transform: scale(1); opacity: 1; filter: blur(0); }
+}
+
+.anim-times {
+  animation: dignifedFade 0.8s cubic-bezier(0.2, 0, 0.2, 1) forwards;
+}
+@keyframes dignifedFade {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.anim-comicsans {
+  animation: staticPop 0.3s ease-out forwards;
+}
+@keyframes staticPop {
+  0% { opacity: 0; transform: rotate(-2deg); }
+  100% { opacity: 1; transform: rotate(0); }
+}
+
+.inline-stagger {
+  animation: inlineStaggerReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes inlineStaggerReveal {
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
