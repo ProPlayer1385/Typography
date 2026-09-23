@@ -33,7 +33,7 @@ export default function ExperimentHeader({
             textTransform: 'uppercase'
           }}
         >
-          TYPELAB<sup>®</sup>
+          READ THIS <span className="brand-wrong">WRONG.</span>
         </span>
         <span 
           style={{ 
@@ -46,7 +46,7 @@ export default function ExperimentHeader({
           className="mono-label" 
           style={{ color: 'var(--muted)', display: 'none', '@media (min-width: 600px)': { display: 'inline' } }}
         >
-          FOUNDATIONS / 2026
+          SAME WORDS / DIFFERENT VOICE
         </span>
       </div>
 
@@ -59,7 +59,7 @@ export default function ExperimentHeader({
             fontWeight: 700
           }}
         >
-          {currentExpNum === 0 ? 'SYSTEM CHECK' : `EXP. 0${currentExpNum} / 0${totalExp}`}
+          {currentExpNum === 0 ? "00 / SOMETHING\'S WRONG" : `${String(currentExpNum).padStart(2, '0')} / ${['','SAY IT AGAIN','BREAK IT DOWN','GIVE IT SPACE','CHANGE ITS CHARACTER','SAME LETTERS','HOW DOES IT FEEL?','FIX IT','YOUR TURN'][currentExpNum]}`}
         </span>
         <ProgressIndicator current={currentExpNum} total={totalExp} />
       </div>

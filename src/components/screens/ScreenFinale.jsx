@@ -85,7 +85,7 @@ export default function ScreenFinale({ onRestart }) {
         {step >= 4 && (
           <div className="finale-composition finale-anim-in">
             <div className="finale-aa-mark">Aa</div>
-            <div className="finale-brand">TYPELAB</div>
+            <div className="finale-brand">READ THIS <span className="brand-wrong">WRONG.</span></div>
             <div className="finale-divider" aria-hidden="true"></div>
             <div className="finale-essence">
               UNDERSTANDING THE ESSENCE OF TYPOGRAPHY
@@ -100,7 +100,7 @@ export default function ScreenFinale({ onRestart }) {
                 className="btn-swiss btn-swiss-accent hover-arrow-parent"
                 style={{ fontSize: '0.85rem' }}
               >
-                ↺ RESTART TYPELAB <span className="hover-arrow">→</span>
+                ↺ READ IT AGAIN <span className="hover-arrow">→</span>
               </button>
             </div>
           </div>

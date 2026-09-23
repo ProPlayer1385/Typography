@@ -205,3 +205,12 @@ button:focus-visible, a:focus-visible, [tabindex]:focus-visible {
   from { opacity: 0; transform: translateX(40px); }
   to { opacity: 1; transform: translateX(0); }
 }
+
+
+/* READ THIS WRONG. identity */
+.brand-wrong {
+  color: var(--accent);
+  display: inline-block;
+  letter-spacing: 0.06em;
+  transform: skewX(-4deg) translateY(-0.02em);
+}

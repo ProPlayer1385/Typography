@@ -222,12 +222,12 @@ export default function Screen02Anatomy({ onNavigateToSpacing }) {
   };
 
   return (
-    <div className="screen-02-container exp-enter" role="region" aria-label="Experiment 02 Anatomy Lab">
+    <div className="screen-02-container exp-enter" role="region" aria-label="Chapter 02 Anatomy">
       {/* Header */}
       <div className="anatomy-header">
         <div>
           <div className="mask-container">
-            <span className="anatomy-title-number mask-reveal-up">02 / EXPERIMENT</span>
+            <span className="anatomy-title-number mask-reveal-up">02 / BREAK IT DOWN</span>
           </div>
           <div className="mask-container">
             <h1 className="anatomy-title-text mask-reveal-up stagger-1">
@@ -386,7 +386,7 @@ export default function Screen02Anatomy({ onNavigateToSpacing }) {
         <div className="sentence-tf-header">
           <div>
             <div className="mask-container">
-              <span className="mono-label mask-reveal-up" style={{ color: 'var(--accent)' }}>TYPEFACE EXPERIMENT</span>
+              <span className="mono-label mask-reveal-up" style={{ color: 'var(--accent)' }}>SAME SENTENCE / DIFFERENT TYPE</span>
             </div>
             <div className="mask-container">
               <h2 className="sentence-tf-title mask-reveal-up stagger-1">
@@ -458,7 +458,7 @@ export default function Screen02Anatomy({ onNavigateToSpacing }) {
           onClick={onNavigateToSpacing}
           className="btn-swiss btn-swiss-accent hover-arrow-parent"
         >
-          PROCEED TO EXP.03 — SPACING LAB <span className="hover-arrow">→</span>
+          GIVE IT SPACE <span className="hover-arrow">→</span>
         </button>
       </div>
     </div>

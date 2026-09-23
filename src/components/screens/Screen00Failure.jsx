@@ -79,9 +79,9 @@ export default function Screen00Failure({ onBeginExperiment }) {
               className={`btn-swiss ${isChaos ? 'chaos-clickhere chaos-target-alignment' : 'hover-arrow-parent fade-in stagger-6'}`}
               autoFocus={!isChaos}
               style={{ width: '100%', transition: 'all var(--transition-major) var(--ease-physical)' }}
-              aria-label={isChaos ? 'Start typography system diagnostic' : 'Begin experiment'}
+              aria-label={isChaos ? 'Start typography system diagnostic' : 'Start the journey'}
             >
-              {isChaos ? 'CLICK HERE!!!' : <>BEGIN EXPERIMENT <span className="hover-arrow">→</span></>}
+              {isChaos ? 'CLICK HERE!!!' : <>START READING <span className="hover-arrow">→</span></>}
             </button>
           </div>
         </div>

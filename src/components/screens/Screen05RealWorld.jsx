@@ -48,7 +48,7 @@ const JOB_REFERENCES = [
 
 function ContextVisual({ type }) {
   if (type === 'newspaper') return <div className="context-mock newspaper-mock"><b>THE DAILY TYPE</b><i></i><span>Typography shapes how a story is entered.</span><em>Aa</em></div>;
-  if (type === 'phone') return <div className="context-mock phone-mock"><div>9:41</div><b>Messages</b><span>TYPELAB</span><span>Presentation at 10:00</span></div>;
+  if (type === 'phone') return <div className="context-mock phone-mock"><div>9:41</div><b>Messages</b><span>READ THIS WRONG.</span><span>Presentation at 10:00</span></div>;
   if (type === 'stream') return <div className="context-mock stream-mock"><b>WATCH NEXT</b><div><i></i><i></i><i></i></div><strong>TYPOGRAPHY</strong></div>;
   if (type === 'fashion') return <div className="context-mock fashion-mock"><b>TYPE</b><span>THE NEW<br/>EDITORIAL</span><em>Aa</em></div>;
   if (type === 'sport') return <div className="context-mock sport-mock"><b>MOVE.</b><strong>FASTER</strong><i>01</i></div>;
@@ -64,9 +64,9 @@ export default function Screen05RealWorld({ onNavigateToPsychology }) {
   const job = JOB_REFERENCES[activeJob];
 
   return (
-    <div className="screen-05-container exp-enter" role="region" aria-label="Experiment 05 Serif vs Sans">
+    <div className="screen-05-container exp-enter" role="region" aria-label="Chapter 05 Same Letters">
       <div className="screen-header">
-        <div className="mask-container"><span className="screen-number mask-reveal-up">05 / EXPERIMENT</span></div>
+        <div className="mask-container"><span className="screen-number mask-reveal-up">05 / SAME LETTERS</span></div>
         <div className="mask-container"><h1 className="screen-title mask-reveal-up stagger-1">Serif vs Sans.</h1></div>
       </div>
 
@@ -146,7 +146,7 @@ export default function Screen05RealWorld({ onNavigateToPsychology }) {
         <div className="philosophy-muted">“WHAT FONT LOOKS NICE?”</div>
         <div className="philosophy-question accent-label">IT ASKS:</div>
         <div className="philosophy-answer">“WHAT DOES THIS NEED TO <span className="accent-highlight">COMMUNICATE?</span>”</div>
-        <div className="conclusion-action"><button onClick={onNavigateToPsychology} className="btn-swiss btn-swiss-accent hover-arrow-parent">PROCEED TO EXP.06 <span className="hover-arrow">→</span></button></div>
+        <div className="conclusion-action"><button onClick={onNavigateToPsychology} className="btn-swiss btn-swiss-accent hover-arrow-parent">HOW DOES IT FEEL? <span className="hover-arrow">→</span></button></div>
       </div>
     </div>
   );

@@ -38,7 +38,7 @@ export default function Screen06Psychology({ onNavigateToCrimeLab }) {
   const currentCase = CASES.find((c) => c.id === activeCaseId) || CASES[0];
 
   return (
-    <div className="screen-06-container exp-enter" style={{ position: 'relative' }} role="region" aria-label="Experiment 06 Font Psychology">
+    <div className="screen-06-container exp-enter" style={{ position: 'relative' }} role="region" aria-label="Chapter 06 Font Psychology">
       {/* Recursive DO NOT ENTER fractal background — very faint */}
       <TypoFractal
         glyphs={['DO NOT ENTER', 'DO NOT', 'ENTER', '⊘']}
@@ -51,7 +51,7 @@ export default function Screen06Psychology({ onNavigateToCrimeLab }) {
       {/* Header */}
       <div className="screen-header">
         <div className="mask-container">
-          <span className="screen-number mask-reveal-up">06 / EXPERIMENT</span>
+          <span className="screen-number mask-reveal-up">06 / HOW DOES IT FEEL?</span>
         </div>
         <div className="mask-container">
           <h1 className="screen-title mask-reveal-up stagger-1">
@@ -178,7 +178,7 @@ export default function Screen06Psychology({ onNavigateToCrimeLab }) {
             onClick={onNavigateToCrimeLab}
             className="btn-swiss btn-swiss-accent hover-arrow-parent"
           >
-            PROCEED TO EXP.07 — TYPOGRAPHY CRIME LAB <span className="hover-arrow">→</span>
+            FIX IT <span className="hover-arrow">→</span>
           </button>
         </div>
       </div>

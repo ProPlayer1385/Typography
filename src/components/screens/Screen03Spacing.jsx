@@ -123,11 +123,11 @@ export default function Screen03Spacing({ onNavigateToPersonality }) {
   const isRhythmRestored = leadingValue >= 1.25 && leadingValue <= 1.45;
 
   return (
-    <div className="screen-03-container exp-enter" role="region" aria-label="Experiment 03 Spacing Lab">
+    <div className="screen-03-container exp-enter" role="region" aria-label="Chapter 03 Spacing">
       {/* Header */}
       <div className="spacing-header">
         <div className="mask-container">
-          <span className="spacing-title-number mask-reveal-up">03 / EXPERIMENT</span>
+          <span className="spacing-title-number mask-reveal-up">03 / GIVE IT SPACE</span>
         </div>
         <div className="mask-container">
           <h1 className="spacing-title-text mask-reveal-up stagger-1">
@@ -408,7 +408,7 @@ export default function Screen03Spacing({ onNavigateToPersonality }) {
               onClick={onNavigateToPersonality}
               className="btn-swiss btn-swiss-accent"
             >
-              PROCEED TO EXP.04 — TYPE PERSONALITY →
+              CHANGE ITS CHARACTER →
             </button>
           </div>
         </div>

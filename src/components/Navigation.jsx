@@ -30,7 +30,7 @@ export default function Navigation({
       onClick={onClose}
       role="dialog"
       aria-modal="true"
-      aria-label="Experiment Index"
+      aria-label="Journey Index"
     >
       <div 
         className="nav-drawer" 
@@ -40,10 +40,10 @@ export default function Navigation({
         <div className="nav-header">
           <div>
             <span className="mono-label" style={{ color: 'var(--accent)', display: 'block' }}>
-              CURRICULUM ARCHITECTURE
+              THE READING ORDER
             </span>
             <h2 style={{ fontSize: '1.25rem', fontFamily: 'var(--font-sans)', fontWeight: 700 }}>
-              TYPELAB INDEX
+              READ THIS WRONG.
             </h2>
           </div>
           <button 
@@ -74,13 +74,13 @@ export default function Navigation({
             >
               <div>
                 <span className="mono-label nav-code" style={{ color: 'var(--accent)' }}>
-                  SCREEN.00
+                  00 / SOMETHING'S WRONG
                 </span>
                 <div className="nav-title" style={{ fontWeight: 700, fontSize: '1.05rem' }}>
-                  Typography System Failure
+                  Something's Wrong.
                 </div>
                 <div className="mono-label" style={{ color: 'var(--muted)', fontSize: '0.72rem', marginTop: '2px' }}>
-                  Diagnosis & System Stabilization
+                  Same information. Broken communication.
                 </div>
               </div>
               <span className="mono-tag" style={{ alignSelf: 'center' }}>
@@ -89,7 +89,7 @@ export default function Navigation({
             </button>
           </li>
 
-          {/* 8 Core Experiments */}
+          {/* 8 Core Chapters */}
           {EXPERIMENTS.map((exp) => {
             const isCurrent = currentScreen === exp.id;
             const isLocked = exp.status === 'locked';

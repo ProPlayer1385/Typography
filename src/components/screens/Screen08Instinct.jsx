@@ -139,10 +139,10 @@ export default function Screen08Instinct({ onCompleteTypelab }) {
   const percentage = Math.round((correctCount / CHALLENGES.length) * 100);
 
   return (
-    <div className="screen-08-container" role="region" aria-label="Experiment 08 Typographic Instinct">
+    <div className="screen-08-container" role="region" aria-label="Chapter 08 Typographic Instinct">
       {/* Header */}
       <div className="screen-header">
-        <span className="screen-number">08 / EXPERIMENT</span>
+        <span className="screen-number">08 / YOUR TURN</span>
         <h1 className="screen-title">
           Do you have<br />typographic instinct?
         </h1>
@@ -234,7 +234,7 @@ export default function Screen08Instinct({ onCompleteTypelab }) {
               className="btn-swiss btn-swiss-accent"
               style={{ fontSize: '1rem', padding: '16px 36px' }}
             >
-              COMPLETE TYPELAB →
+              LOOK AGAIN →
             </button>
           </div>
         </div>

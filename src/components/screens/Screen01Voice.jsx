@@ -55,7 +55,7 @@ export default function Screen01Voice({ onEnterTypelab }) {
         >
           {isVoice1 && 'VOICE ITERATION 01 // SERIF CONDENSED WHISPER'}
           {isVoice2 && 'VOICE ITERATION 02 // COMPRESSED AGGRESSIVE GROTESQUE'}
-          {isRevealed && 'SYNTHESIS // DUAL PERCEPTION EXPERIMENT'}
+          {isRevealed && 'SAME WORDS // DIFFERENT VOICE'}
         </div>
 
         {/* Text Display - Never changes DOM, only classes for kinetic typography */}
@@ -138,7 +138,7 @@ export default function Screen01Voice({ onEnterTypelab }) {
         /* -------------------------------------------------------------
             FINAL REVEAL / SYNTHESIS
             ------------------------------------------------------------- */
-        <div className="synthesis-card" role="region" aria-label="Experiment Synthesis">
+        <div className="synthesis-card" role="region" aria-label="Voice synthesis">
           <div className="synthesis-lead">
             THE WORDS NEVER CHANGED.
             <span className="voice-highlight">THE VOICE DID.</span>
@@ -161,7 +161,7 @@ export default function Screen01Voice({ onEnterTypelab }) {
               style={{ fontSize: '1rem', padding: '16px 36px' }}
               autoFocus
             >
-              ENTER TYPELAB →
+              BREAK IT DOWN →
             </button>
           </div>
         </div>

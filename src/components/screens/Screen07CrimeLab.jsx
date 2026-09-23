@@ -13,8 +13,8 @@ export default function Screen07CrimeLab({ onNavigateToInstinct }) {
   const [case3Diagnosed, setCase3Diagnosed] = useState(false); const [case3Fixed, setCase3Fixed] = useState(false);
 
   return (
-    <div className="screen-07-container exp-enter" role="region" aria-label="Experiment 07 Typography Crime Lab">
-      <div className="screen-header"><div className="mask-container"><span className="screen-number mask-reveal-up">07 / EXPERIMENT</span></div><div className="mask-container"><h1 className="screen-title mask-reveal-up stagger-1">Typography Crime Lab.</h1></div></div>
+    <div className="screen-07-container exp-enter" role="region" aria-label="Chapter 07 Repair Typography">
+      <div className="screen-header"><div className="mask-container"><span className="screen-number mask-reveal-up">07 / FIX IT</span></div><div className="mask-container"><h1 className="screen-title mask-reveal-up stagger-1">Fix It.</h1></div></div>
       <div className="crime-intro"><span>3 CASES</span><strong>THE WORDS STAY. THE TYPOGRAPHY GETS REPAIRED.</strong></div>
 
       <article className="crime-case-box fade-in stagger-2">
@@ -47,7 +47,7 @@ export default function Screen07CrimeLab({ onNavigateToInstinct }) {
         <div className="crime-actions-row"><div className="mono-label">WHAT SHOULD YOUR EYE READ FIRST?</div>{!case3Diagnosed ? <button onClick={() => setCase3Diagnosed(true)} className="btn-swiss btn-swiss-secondary">TRY TO FIND THE HEADLINE →</button> : <div className="diagnosis-badge"><b>YOU CAN'T.</b><span>Every line has equal visual volume, so nothing leads the eye.</span>{!case3Fixed && <button onClick={() => setCase3Fixed(true)} className="btn-swiss btn-swiss-accent">BUILD HIERARCHY →</button>}</div>}</div>
       </article>
 
-      <div className="crime-conclusion fade-in stagger-5"><div className="shouting-quote"><span>When everything shouts,</span><strong>nothing is heard.</strong></div><div className="conclusion-action"><button onClick={onNavigateToInstinct} className="btn-swiss btn-swiss-accent hover-arrow-parent">PROCEED TO EXP.08 <span className="hover-arrow">→</span></button></div></div>
+      <div className="crime-conclusion fade-in stagger-5"><div className="shouting-quote"><span>When everything shouts,</span><strong>nothing is heard.</strong></div><div className="conclusion-action"><button onClick={onNavigateToInstinct} className="btn-swiss btn-swiss-accent hover-arrow-parent">YOUR TURN <span className="hover-arrow">→</span></button></div></div>
     </div>
   );
 }

@@ -53,7 +53,7 @@ export default function Screen04Personality({ onRestartOrIndex }) {
   const displayText = inputText.trim() || 'DESIGN';
 
   return (
-    <div className="screen-04-container exp-enter" style={{ position: 'relative' }} role="region" aria-label="Experiment 04 Type Personality">
+    <div className="screen-04-container exp-enter" style={{ position: 'relative' }} role="region" aria-label="Chapter 04 Type Personality">
       {/* Typographic fractal background */}
       <TypoFractal
         glyphs={displayText.length > 2 ? [displayText[0], displayText[1], 'A', 'a'] : ['A', 'a', 'Aa']}
@@ -66,7 +66,7 @@ export default function Screen04Personality({ onRestartOrIndex }) {
       {/* Header */}
       <div className="personality-header">
         <div className="mask-container">
-          <span className="personality-title-number mask-reveal-up">04 / EXPERIMENT</span>
+          <span className="personality-title-number mask-reveal-up">04 / CHANGE ITS CHARACTER</span>
         </div>
         <div className="mask-container">
           <h1 className="personality-title-text mask-reveal-up stagger-1">

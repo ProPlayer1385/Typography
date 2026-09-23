@@ -10,7 +10,7 @@ export default function ProgressIndicator({ current = 1, total = 8 }) {
       aria-valuenow={current}
       aria-valuemin={0}
       aria-valuemax={total}
-      aria-label={`Progress: Experiment ${current} of ${total}`}
+      aria-label={`Progress: chapter ${current} of ${total}`}
       style={{
         display: 'flex',
         alignItems: 'center',
@@ -40,7 +40,7 @@ export default function ProgressIndicator({ current = 1, total = 8 }) {
                   : 'rgba(17, 17, 17, 0.2)',
                 transition: 'all 0.25s ease'
               }}
-              title={`Experiment ${i + 1}`}
+              title={`Chapter ${i + 1}`}
             />
           );
         })}
