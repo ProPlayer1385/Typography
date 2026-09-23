@@ -317,3 +317,23 @@
   text-transform: uppercase;
   letter-spacing: -0.01em;
 }
+
+/* Offline, image-like real-world typography illustrations. These are intentionally
+   visual-first: the user can explain the use case aloud while the screen shows it. */
+.real-life-visual { margin: 10px 0 18px; border: 1px solid var(--border); background: var(--surface); overflow: hidden; }
+.real-life-svg { display:block; width:100%; height:clamp(150px,20vw,230px); background:var(--surface); }
+.real-life-svg rect,.real-life-svg path,.real-life-svg line { fill:none; stroke:var(--fg); stroke-width:2; }
+.real-life-svg text { fill:var(--fg); font-family:var(--font-sans); }
+.real-life-svg .svg-big { font-size:44px; font-weight:800; letter-spacing:-2px; }
+.real-life-svg .svg-small { font-size:13px; font-family:var(--font-mono); letter-spacing:1.4px; }
+.real-life-svg .svg-brand { font-size:38px; font-weight:900; letter-spacing:5px; }
+.real-life-svg .svg-price,.real-life-svg .svg-date { font-size:22px; font-weight:800; }
+.real-life-svg .svg-sign { font-size:30px; font-weight:900; letter-spacing:2px; }
+.real-life-svg .svg-chat { font-size:15px; }
+.real-life-svg .bubble { fill:rgba(255,59,34,.10); stroke:var(--accent); }
+.real-life-svg .bubble.alt { fill:rgba(17,17,17,.06); stroke:var(--fg); }
+.real-life-svg .svg-notice { font-size:30px; font-weight:900; letter-spacing:3px; }
+.real-life-svg .svg-money { font-size:42px; font-weight:900; }
+.real-life-svg .svg-stream { font-size:40px; font-weight:900; letter-spacing:-1px; }
+.real-life-svg .svg-serif-title { font-size:28px; font-family:Georgia,'Times New Roman',serif; }
+@media (max-width:700px){ .real-life-svg { height:160px; } }

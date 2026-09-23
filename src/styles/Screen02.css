@@ -557,3 +557,7 @@
   .sentence-absence-card,.sentence-callout,.sentence-counter-demo,.sentence-kerning-demo { transform:scale(.82); transform-origin:top right; }
   .sentence-leading-control { bottom:12%; }
 }
+
+/* Geometry-locked anatomy specimen: the glyph now lives in the same SVG
+   coordinate system as its guides, so the baseline cannot drift with viewport/font metrics. */
+.anatomy-svg-glyph { dominant-baseline: alphabetic; }

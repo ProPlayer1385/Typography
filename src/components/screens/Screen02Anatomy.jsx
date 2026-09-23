@@ -18,9 +18,9 @@ const ANATOMY_TERMS = [
     definition: 'The vertical height of lowercase letters excluding ascenders and descenders.',
     overlay: (
       <g className="fade-in">
-        <rect x="20" y="175" width="500" height="110" fill="var(--accent)" fillOpacity="0.15" stroke="var(--accent)" strokeWidth="2" strokeDasharray="4 2" />
-        <rect x="20" y="150" width="120" height="22" fill="var(--fg)" />
-        <text x="26" y="165" fill="#FFFFFF" fontSize="11" fontFamily="var(--font-mono)" fontWeight="700">X-HEIGHT</text>
+        <rect x="20" y="145" width="500" height="140" fill="var(--accent)" fillOpacity="0.15" stroke="var(--accent)" strokeWidth="2" strokeDasharray="4 2" />
+        <rect x="20" y="118" width="120" height="22" fill="var(--fg)" />
+        <text x="26" y="133" fill="#FFFFFF" fontSize="11" fontFamily="var(--font-mono)" fontWeight="700">X-HEIGHT</text>
       </g>
     )
   },
@@ -29,9 +29,9 @@ const ANATOMY_TERMS = [
     definition: 'The portion of a lowercase letter that rises above the x-height.',
     overlay: (
       <g className="fade-in">
-        <rect x="20" y="70" width="500" height="105" fill="var(--accent)" fillOpacity="0.15" stroke="var(--accent)" strokeWidth="2" strokeDasharray="4 2" />
-        <rect x="20" y="45" width="130" height="22" fill="var(--fg)" />
-        <text x="26" y="60" fill="#FFFFFF" fontSize="11" fontFamily="var(--font-mono)" fontWeight="700">ASCENDER ZONE</text>
+        <rect x="20" y="65" width="500" height="80" fill="var(--accent)" fillOpacity="0.15" stroke="var(--accent)" strokeWidth="2" strokeDasharray="4 2" />
+        <rect x="20" y="38" width="130" height="22" fill="var(--fg)" />
+        <text x="26" y="53" fill="#FFFFFF" fontSize="11" fontFamily="var(--font-mono)" fontWeight="700">ASCENDER ZONE</text>
       </g>
     )
   },
@@ -265,12 +265,13 @@ export default function Screen02Anatomy({ onNavigateToSpacing }) {
 
           {viewMode === 'glyph' ? (
             <div className="specimen-canvas fade-in" key={activeTerm.id}>
-              <span className={`specimen-glyph-text ${activeTerm.id === 'ligature' ? 'ligature-active' : ''} ${activeTerm.id === 'kerning' ? 'kerning-active' : ''} ${activeTerm.id === 'leading' ? 'leading-active' : ''}`}>
-                {activeTerm.id === 'ligature' && <span className="ligature-text">f<span className="ligature-i">i</span></span>}
-                {activeTerm.id === 'kerning' && <span className="kerning-text">A<span className="kerning-v">V</span></span>}
-                {activeTerm.id === 'leading' && <span className="leading-text">A<br/>g</span>}
-                {['baseline', 'xheight', 'ascender', 'descender', 'stem', 'counter', 'terminal'].includes(activeTerm.id) && 'Ag'}
-              </span>
+              {!['baseline', 'xheight', 'ascender', 'descender', 'stem', 'counter', 'terminal'].includes(activeTerm.id) && (
+                <span className={`specimen-glyph-text ${activeTerm.id === 'ligature' ? 'ligature-active' : ''} ${activeTerm.id === 'kerning' ? 'kerning-active' : ''} ${activeTerm.id === 'leading' ? 'leading-active' : ''}`}>
+                  {activeTerm.id === 'ligature' && <span className="ligature-text">f<span className="ligature-i">i</span></span>}
+                  {activeTerm.id === 'kerning' && <span className="kerning-text">A<span className="kerning-v">V</span></span>}
+                  {activeTerm.id === 'leading' && <span className="leading-text">A<br/>g</span>}
+                </span>
+              )}
               <svg
                 className="anatomy-svg-overlay"
                 viewBox="0 0 540 380"
@@ -282,8 +283,20 @@ export default function Screen02Anatomy({ onNavigateToSpacing }) {
                     <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)" />
                   </marker>
                 </defs>
+                {['baseline', 'xheight', 'ascender', 'descender', 'stem', 'counter', 'terminal'].includes(activeTerm.id) && (
+                  <text
+                    className="anatomy-svg-glyph"
+                    x="270"
+                    y="285"
+                    textAnchor="middle"
+                    fill="var(--fg)"
+                    fontFamily="Georgia, 'Times New Roman', serif"
+                    fontSize="300"
+                    fontWeight="400"
+                  >Ag</text>
+                )}
                 <line x1="20" y1="285" x2="520" y2="285" stroke="#111111" strokeWidth="1" strokeDasharray="3 3" opacity="0.3" />
-                <line x1="20" y1="175" x2="520" y2="175" stroke="#111111" strokeWidth="1" strokeDasharray="3 3" opacity="0.3" />
+                <line x1="20" y1="145" x2="520" y2="145" stroke="#111111" strokeWidth="1" strokeDasharray="3 3" opacity="0.3" />
                 {activeTerm.overlay}
               </svg>
             </div>
